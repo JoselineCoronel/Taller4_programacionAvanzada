@@ -1,0 +1,40 @@
+@startuml
+
+entity Pokemon{
+-id: int
+-nombre: String
+-etapa: String
+-evolucionS: String
+-evolucionP: String
+-tipo1: String
+-tipo2: String
+
++Pokemon(id: int, nombre: String, etapa: String, evolucionS: String,
+evolucionP: String, tipo1: String, tipo2: String): void
++getId(): int
++getNombre(): String
++getEtapa(): String
++getEvolucionS(): String
++getEvolucionP(): String
++getTipo1(): String
++getTipo2(): String
+}
+
+interface Pokedex {
++desplegarPorRango(): String
++desplegarAlmacenados(): String
++desplegarPorTipo(): String
++desplegarPrimeraEv(): String
++busqueda(): void
++leerTxt(): void
+}
+
+entity PokedexImpl{
++PokedexImpl()
+}
+
+
+PokedexImpl ..> Pokedex: implements
+Pokedex --> Pokemon
+
+@enduml
